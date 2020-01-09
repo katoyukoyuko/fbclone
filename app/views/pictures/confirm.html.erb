@@ -1,0 +1,23 @@
+<h3>以下の内容で、投稿する。</h3>
+
+<%= form_with(model: @picture, local: true) do |form| %>
+
+    <%= form.hidden_field :image %>
+    <%= form.hidden_field :content %>
+  
+    <div class="field">
+      <%= form.label :image %>
+      <%= @picture.image %>
+      <%= form.hidden_field :image_cache %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :content %>
+      <%= @picture.content %>
+    </div>
+  
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  <% end %>
+  
