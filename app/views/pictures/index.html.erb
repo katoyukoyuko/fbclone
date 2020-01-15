@@ -5,7 +5,9 @@
 <% @pictures.each do |picture| %>
   <p class = "post">
     <%= picture.user.name %><br>
-    <%= image_tag picture.image.url %><br>
+    <% unless picture.image.blank? %>
+    <%= image_tag picture.image.url %>
+    <% end %>
     <%= picture.content %><br>
     <%= picture.created_at %><br>
     <%= link_to 'Show', picture %><br>
